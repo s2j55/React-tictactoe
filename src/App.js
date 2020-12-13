@@ -5,24 +5,19 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
+      player_turn: "X",
       board: ["", "", "", "", "", "", "", "", ""]
     }
   }
-  
+
   render() {
   return (
     <div className="App">
       <h1>Tic Tac Toe</h1>
       <div className="board">
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
+       {this.state.board.map((square) => {
+         return(<div className="square">{square}</div>)
+       })}
       </div>
     </div>
     );
